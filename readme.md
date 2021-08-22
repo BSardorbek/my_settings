@@ -12,8 +12,10 @@ This Compose file contains the following environment variables:
 * `PGADMIN_PORT` the default value is **5050**
 * `PGADMIN_DEFAULT_EMAIL` the default value is **admin@admin.com**
 * `PGADMIN_DEFAULT_PASSWORD` the default value is **admin**
+* `RABBITMQ_DEFAULT_USER` the default value is **admin**
+* `RABBITMQ_DEFAULT_PASS` the default value is **admin**
 
-## Access to postgres: 
+## Access to PostgreSQL: 
 * `localhost:5432`
 * **Username:** postgres (as a default)
 * **Password:** 1101 (as a default)
@@ -28,3 +30,9 @@ This Compose file contains the following environment variables:
 * **Port** `5432`
 * **Username** as `POSTGRES_USER`, by default: `postgres`
 * **Password** as `POSTGRES_PASSWORD`, by default `1101`
+
+## Access to RabbitMQ: 
+* **URL:** `http://localhost:15672`
+* **Username:** admin (as a default)
+* **Password:** admin (as a default)
+
