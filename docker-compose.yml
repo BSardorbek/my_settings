@@ -31,6 +31,21 @@ services:
       - my_network
     restart: unless-stopped
 
+  rabbitmq:
+    container_name: rabbitmq_container
+    image: rabbitmq:3-management-alpine
+    volumes: 
+      - rabbitmq:/var/lib/rabbitmq
+    environment: 
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:-admin}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS:-admin}
+    ports: 
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - my_network
+    restart: always
+
 networks:
   my_network:
     driver: bridge
@@ -38,3 +53,4 @@ networks:
 volumes:
     postgres:
     pgadmin:
+    rabbitmq:
